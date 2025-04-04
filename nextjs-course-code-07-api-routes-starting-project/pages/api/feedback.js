@@ -10,6 +10,7 @@ function handler(req, res) {
     };
     const filePath = path.join(process.cwd(), "data", "feedback.json");
     const fileData = fs.readFileSync(filePath);
+    console.log("fileDa", fileData);
     const data = JSON.parse(fileData);
     data.push(feedbackText);
     fs.writeFileSync(filePath, JSON.stringify(data));
